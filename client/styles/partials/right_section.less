@@ -1,0 +1,34 @@
+@import 'app_helpers';
+
+#right {
+
+  #current_task_name {
+    width: 100%;
+    position: relative;
+    .generic_container;
+    padding: 0 !important;
+
+    .name {
+      display: inline-block;
+      padding: 7px 5px;
+    }
+  }
+
+  circle {
+    fill: yellow;
+    fill-opacity: 0.9;
+  }
+
+  #startTaskTimer, #completeTask {
+    display: inline-block;
+    padding: 7px 5px;
+    box-sizing: content-box;
+    float: right;
+    border-left: 1px solid #eaeaea;
+    min-width: 100px;
+    text-align: center;
+
+    &:hover { .depressed; }
+  }
+
+}

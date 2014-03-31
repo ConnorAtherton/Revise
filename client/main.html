@@ -1,0 +1,30 @@
+<head>
+  <title>Meteor TODO</title>
+  <link href="http://fonts.googleapis.com/css?family=Droid+Sans:200,400,800" rel="stylesheet" type="text/css">
+</head>
+<body>
+  {{#if currentUser}}
+    {{> layout}}
+  {{else}}
+    {{> notLoggedIn}}
+  {{/if}}
+</body>
+
+<template name="layout">
+  <section id="main" class="cf">
+    <section id="left">
+      {{> left_section}}
+    </section>
+    <section id="right">
+      {{> right_section}}
+    </section>
+  </section>
+</template>
+
+<template name="notLoggedIn">
+  <section id="main" class="cf">
+    <header class="notLoggedIn">
+      {{> loginButtons}}
+    </header>
+  </section>
+</template>

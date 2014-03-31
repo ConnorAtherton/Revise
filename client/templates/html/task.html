@@ -1,0 +1,15 @@
+<template name="task">
+  <div class="task cf {{#if complete}} task-complete {{/if}} {{#if selected}} task-selected {{/if}}">
+    <div class="details">
+      <div class="name">{{name}}</div>
+      <div class="duration">{{duration}} minutes</div>
+    </div>
+    <div class="completed aligner">
+      {{#if complete}}
+        <span class="tick">&#10004;</span>
+      {{else}}
+        <span class="cross">&#10008;</span>
+      {{/if}}
+    </div>
+  </div>
+</template>

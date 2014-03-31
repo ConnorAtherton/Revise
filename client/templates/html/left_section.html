@@ -1,0 +1,35 @@
+<template name="left_section">
+  {{> left_section_header}}
+  <div id="listContainer">
+
+    {{#if adding_task}}
+      <form id="addTask">
+        <input type="text" id="taskName">
+        <div class="add_task_sentence">
+          will take <span id="scrubbing-horizontal-array"></span> minutes
+        </div>
+        <button id="saveTask">Save</button>
+      </form>
+    {{/if}}
+
+    {{#if adding_list}}
+      <form id="addList">
+        <input type="text" id="listName">
+        <button id="saveList">Save</button>
+      </form>
+    {{/if}}
+
+    {{#if viewing_list }}
+     {{! Could put the current list here }}
+     {{! We are viewing a specific list so show all related tasks}}
+      {{#each tasks}}
+        {{> task}}
+      {{/each}}
+    {{else}}
+      {{#each lists}}
+        {{> list}}
+      {{/each}}
+    {{/if}}
+
+  </div>
+</template>

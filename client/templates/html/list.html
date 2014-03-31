@@ -1,0 +1,14 @@
+<template name="list">
+  <div class="list cf">
+    <div class="details">
+      <div class="description">{{name}}</div>
+      <section class="progress">
+        <section class="progress-inner" style="width: {{percentage_complete}}%"></section>
+      </section>
+    </div>
+    <div class="completed">
+      <span class="tasknumber">{{number_of_tasks}}</span>
+      <span class="subscript">{{task_or_tasks}}</span>
+    </div>
+  </div>
+</template>

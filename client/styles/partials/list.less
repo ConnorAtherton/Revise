@@ -1,0 +1,33 @@
+@import 'app_helpers';
+
+.list {
+
+  .progress {
+    width: 100px;
+    height: 5px;
+    border: 1px solid #e3e3e3;
+    border-radius: 3px;
+    padding: 0;
+    margin-top: 8px;
+  }
+
+  .progress-inner {
+    border-radius: 3px;
+    background-color: green;
+    height: 100%;
+  }
+
+  .completed {
+    > span {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+
+      &.tasknumber {
+        font-size: 1.6em;
+        padding-top: 10px;
+      }
+      &.subscript { .small-text }
+    }
+  }
+}

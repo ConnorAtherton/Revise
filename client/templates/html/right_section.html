@@ -1,0 +1,20 @@
+<template name="right_section">
+  {{> right_section_header}}
+  <div class="container aligner">
+    <div class="inner aligner-item">
+      {{#if current_task}}
+        <div id="chart_container"></div>
+        <div id="current_task_name">
+          <span class="name">{{ current_task_name }}</span>
+          {{#if timer_started}}
+            <span id="completeTask">Complete it</span>
+          {{else}}
+            <span id="startTaskTimer">Start timer</span>
+          {{/if}}
+        </div>
+      {{else}}
+          <h2 class="askForTask">Please select a task</h2>
+      {{/if}}
+    </div>
+  </div>
+</template>

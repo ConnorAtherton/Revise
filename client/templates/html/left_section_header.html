@@ -1,0 +1,10 @@
+<template name="left_section_header">
+  <header class="taskView">
+    {{#if viewing_list }}
+      <button id="viewLists">View lists</button>
+      <button id="newTask">New task</button>
+    {{else}}
+      <button id="newList">New list</button>
+    {{/if}}
+  </header>
+</template>

@@ -1,0 +1,48 @@
+.generic_container {
+  position: relative;
+  display: inline-block;
+  padding: 7px 12px;
+  font-size: 13px;
+  font-weight: bold;
+  color: #333;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
+  white-space: nowrap;
+  background-color: #EEE;
+  background-image: -moz-linear-gradient(#fcfcfc, #eee);
+  background-image: -webkit-linear-gradient(#FCFCFC, #EEE);
+  background-image: linear-gradient(#FCFCFC, #EEE);
+  background-repeat: repeat-x;
+  border-radius: 3px;
+  border: 1px solid #D5D5D5;
+  vertical-align: middle;
+}
+
+.cursor_pointer {
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-appearance: none;
+}
+
+.generic_container_hover {
+  cursor: pointer;
+  text-decoration: none;
+  background-color: #DDD;
+  background-image: -moz-linear-gradient(#eee, #ddd);
+  background-image: -webkit-linear-gradient(#EEE, #DDD);
+  background-image: linear-gradient(#EEE, #DDD);
+  background-repeat: repeat-x;
+  border-color: #CCC;
+}
+
+.small-text {
+  text-transform: uppercase;
+  font-size: 10px;
+  color: #999;
+}
+
+.depressed { .generic_container_hover; }
