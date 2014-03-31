@@ -28,8 +28,8 @@ Template.right_section.events({
     Deps.flush();
 
     Meteor.call('setTaskComplete', Session.get('current_task')._id, Session.get('current_task').list_id, function () {
-      selectNextTask();
-      console.log(Session.get('current_task'), 'is the new current task');
+        selectNextTask();
+        console.log(Session.get('current_task'), 'is the new current task');
     });
 
     // TODO - Should move on to the next task here instead of just
@@ -38,21 +38,28 @@ Template.right_section.events({
 });
 
 selectNextTask = function () {
+  console.log('selecting thr nextr rask');
   if(!Session.get('current_list')) return;
 
-  var newTask = Tasks.find({
-    list_id: Session.get('current_list')._id,
-    complete: false
-  }, {sort: {time_created: -1}}).fetch();
+  var newTask;
+  Meteor.setTimeout(function () {
+     newTask = Tasks.find({
+        list_id: Session.get('current_list')._id,
+        complete: false
+      }, {sort: {time_created: 1}}).fetch();
 
-  // if there is an incomplete task left in the list
-  // set it as session variable so it is selected
-  if(newTask) {
-    console.log('There is a task')
-    return Session.set('current_task', newTask);
-  }
+     console.log('Remianing tasks', newTask);
 
-  Session.set('current_task', null);
+     // if there is an incomplete task left in the list
+     // set it as session variable so it is selected
+     if(newTask.length > 0) {
+       Chart.draw(newTask[0].duration);
+       return Session.set('current_task', newTask[0]);
+     }
 
-  console.log('new task should be', newTask, Session.get('current)'));
+     Session.set('current_task', null);
+
+     console.log('new task should be', newTask, Session.get('current)'));
+  }, 250);
+
 }

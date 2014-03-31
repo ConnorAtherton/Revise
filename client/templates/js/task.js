@@ -16,19 +16,16 @@ Template.task.events({
   'click .cross': function (evt) {
     evt.stopImmediatePropagation();
 
-    console.log(Session.get('current_task')._id, this._id);
-
-    if(Session.get('current_task')._id === this._id) {
-      console.log('curren task complete whilst time happening');
+    if(Session.get('current_task') && Session.get('current_task')._id === this._id) {
       stopTimer();
       Chart.update(0);
-      Session.set('current_task', null);
     }
     // stopTimer();
     // animate the chart to 0 just to deal with them finishing
     // before the timer runs out
     // Chart.update(this.duration);
     Meteor.call('setTaskComplete', this._id, this.list_id);
+    selectNextTask();
   },
 
   'click .tick': function (evt) {

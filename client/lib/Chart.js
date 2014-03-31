@@ -72,8 +72,8 @@ Chart = (function() {
 
     console.log('Chart updating', newValue);
 
-    if(!drawn)
-      return;
+    // if(!drawn)
+    //   return;
 
     // convert from ms to s
     newValue = Utils.ms_to_s(newValue);
